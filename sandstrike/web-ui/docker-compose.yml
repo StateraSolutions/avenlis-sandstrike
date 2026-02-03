@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  avenlis-ui:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - avenlis-backend
+    networks:
+      - avenlis-network
+
+  avenlis-backend:
+    build:
+      context: ..
+      dockerfile: web-ui/Dockerfile.backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../:/app
+    working_dir: /app
+    command: python avenlis/server.py
+    networks:
+      - avenlis-network
+
+networks:
+  avenlis-network:
+    driver: bridge
+
+
+

@@ -1,0 +1,63 @@
+{
+  "name": "avenlis-web-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "local:app": "vite",
+    "serve": "vite preview",
+    "clean": "rm -rf dist node_modules/.vite",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.19",
+    "@mui/material": "^5.14.20",
+    "@mui/x-data-grid": "^7.22.0",
+    "@mui/x-charts": "^7.22.0",
+    "chart.js": "^4.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "socket.io-client": "^4.7.4",
+    "recharts": "^2.8.0",
+    "js-yaml": "^4.1.0",
+    "axios": "^1.6.2",
+    "framer-motion": "^10.16.4",
+    "@hello-pangea/dnd": "^16.6.0",
+    "react-hotkeys-hook": "^4.4.1",
+    "@tanstack/react-virtual": "^3.0.0",
+    "react-window": "^1.8.8",
+    "react-select": "^5.8.0",
+    "react-tooltip": "^5.25.2",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-confetti": "^6.1.0",
+    "react-intersection-observer": "^9.5.3",
+    "lodash.debounce": "^4.0.8",
+    "date-fns": "^2.30.0",
+    "react-use": "^17.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@types/js-yaml": "^4.0.9",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/react-window": "^1.8.8",
+    "@types/react-copy-to-clipboard": "^5.0.7",
+    "@types/react-syntax-highlighter": "^15.5.11",
+    "@vitejs/plugin-react": "^4.1.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  }
+}
+
+
+

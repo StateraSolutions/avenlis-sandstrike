@@ -1,0 +1,45 @@
+# Attack Types and Vulnerabilities Template
+# Copy this template to define your own attack techniques and vulnerability categories
+# This helps organize and classify your security testing approaches
+
+attack_techniques:
+  # Example attack technique - copy this structure for new techniques
+  - id: my_custom_attack
+    name: "My Custom Attack Technique"
+    description: "Description of what this attack technique does and how it works"
+    examples:
+      - "Example attack scenario 1"
+      - "Example attack scenario 2"
+      - "Example attack scenario 3"
+
+vulnerability_categories:
+  
+  # Security vulnerabilities section
+  security_vulnerabilities:
+    - id: my_custom_security_vuln
+      name: "My Custom Security Vulnerability"
+      description: "Description of this security vulnerability and its impact"
+      severity: high  # Choose from: low, medium, high
+
+  # Safety vulnerabilities section  
+  safety_vulnerabilities:
+    - id: my_custom_safety_vuln
+      name: "My Custom Safety Category"
+      description: "Description of this safety vulnerability category"
+      subcategories:  # Optional: add subcategories if needed
+        - id: my_subcategory_1
+          name: "My Subcategory 1"
+          description: "Description of this specific subcategory"
+        
+        - id: my_subcategory_2
+          name: "My Subcategory 2"
+          description: "Description of another subcategory"
+
+# Usage Instructions:
+# 1. Copy this template
+# 2. Replace 'my_custom_attack' with your attack technique ID
+# 3. Replace 'my_custom_security_vuln' with your vulnerability category ID
+# 4. Provide clear names and descriptions
+# 5. Add subcategories if your vulnerability has specific types
+# 6. Set appropriate severity levels
+# 7. Save and reference in your prompt definitions

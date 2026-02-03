@@ -1,0 +1,20 @@
+# Dynamic Variables Configuration
+# This file stores template variable values that can be used in prompts with dynamic fields
+# Variables are organized by category for better management
+
+variables:
+  # Application-related variables
+  application:
+    default_app: "MyApplication"
+
+  # Data-related variables
+  data:
+    user_credentials: "user credentials and passwords"
+
+  # System-related variables
+  system:
+    production_db: "production database"
+
+  # Additional context variables
+  context:
+    user_role: "administrator"

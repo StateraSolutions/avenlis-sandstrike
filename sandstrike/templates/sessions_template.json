@@ -1,0 +1,37 @@
+{
+  "scan_results": [
+    {
+      "id": "your_scan_id_here",
+      "session_name": "Your Session Name Here",
+      "target": "http://localhost:11434/api/generate",
+      "target_model": "your_model_name",
+      "collection_id": "your_collection_id",
+      "status": "completed",
+      "started_at": "2025-01-01T00:01:00Z", 
+      "metadata": {
+        "scan_type": "full",
+        "model_name": "your_model_name",
+        "temperature": 0.7,
+        "max_tokens": 150
+      },
+      "results": [
+        {
+          "prompt_id": "sample_prompt_id",
+          "status": "passed",
+          "response": "Sample response from the model",
+          "timestamp": "2025-01-01T00:01:15Z",
+          "response_time_ms": 1250,
+          "metadata": {
+            "attack_technique": "prompt_probing",
+            "vuln_category": "system_prompt_leakage",
+            "severity": "medium"
+          }
+        }
+      ],
+      "source": "file",
+      "source_file": "sessions.json",
+      "vulnerabilities_found": 1,
+      "tags": ["sample", "security", "baseline"]
+    }
+  ]
+}
