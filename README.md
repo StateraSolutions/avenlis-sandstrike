@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="sandstrike/images/sandstrike_white.png" alt="SandStrike Logo" width="300">
+<img src="https://raw.githubusercontent.com/StateraSolutions/avenlis-sandstrike/main/sandstrike/images/sandstrike_white.png" alt="SandStrike Logo" width="300">
 
 </div>
 
@@ -37,14 +37,14 @@
 ### From PyPI
 
 ```bash
-pip install avenlis
+pip install sandstrike
 ```
 
 ### From Source
 
 ```bash
-git clone https://github.com/avenlis/avenlis-python.git
-cd avenlis-python
+git clone https://github.com/StateraSolutions/avenlis-sandstrike.git
+cd avenlis-sandstrike
 pip install -e .
 ```
 

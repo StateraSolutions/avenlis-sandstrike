@@ -52,9 +52,9 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://avenlis.com"
+Homepage = "https://avenlis.staterasolv.com"
 Repository = "https://github.com/StateraSolutions/avenlis-sandstrike"
-Documentation = "https://github.com/StateraSolutions/avenlisLibraryTest/blob/main/README.md"
+Documentation = "https://github.com/StateraSolutions/avenlis-sandstrike"
 
 [project.scripts]
 sandstrike = "sandstrike.cli.main:main"
