@@ -300,14 +300,11 @@ class AvenlisServer:
         def get_auth_status():
             """Get current authentication status."""
             try:
-                # Try to get API key from headers first, then fall back to environment variable
-                api_key = request.headers.get('X-API-Key') or request.headers.get('Authorization', '').replace('Bearer ', '')
-                
+                # Auth status for UI should only use server-side configured API key.
+                # Do not accept request headers here to avoid accidental/stale client auth.
+                api_key = os.getenv('AVENLIS_API_KEY')
                 if not api_key:
-                    # Fall back to environment variable (for frontend access)
-                    api_key = os.getenv('AVENLIS_API_KEY')
-                    if not api_key:
-                        return jsonify({'authenticated': False, 'error': 'No API key found'}), 401
+                    return jsonify({'authenticated': False, 'error': 'No API key found'}), 401
                 
                 # Check if refresh is requested (to bypass cache)
                 refresh = request.args.get('refresh', 'false').lower() == 'true'
