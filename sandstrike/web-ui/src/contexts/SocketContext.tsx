@@ -36,22 +36,15 @@ export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
     })
 
     socketInstance.on('connect', () => {
-      console.log('Connected to Avenlis server via Socket.IO')
       setIsConnected(true)
     })
 
     socketInstance.on('disconnect', () => {
-      console.log('Disconnected from Avenlis server')
       setIsConnected(false)
     })
 
     socketInstance.on('connect_error', (error) => {
-      console.log('Socket connection error:', error)
       setIsConnected(false)
-    })
-
-    socketInstance.on('status', (data) => {
-      console.log('Server status:', data)
     })
 
     setSocket(socketInstance)

@@ -111,7 +111,6 @@ const Sessions: React.FC = () => {
       
       const response = await axios.get(`/api/sessions?${params.toString()}`)
       const sessionsData = response.data.sessions || response.data || []
-      console.log('Loaded sessions:', sessionsData.length, sessionsData)
       setSessions(sessionsData)
     } catch (error) {
       console.error('Failed to load sessions:', error)

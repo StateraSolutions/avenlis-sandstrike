@@ -116,12 +116,6 @@ const MitreAtlas: React.FC = () => {
   const loadAtlasData = async () => {
     try {
       const response = await axios.get('/api/atlas-data')
-      console.log('ATLAS Data received:', response.data)
-      console.log('Matrices:', response.data.matrices)
-      if (response.data.matrices && response.data.matrices[0]) {
-        console.log('Tactics:', response.data.matrices[0].tactics)
-        console.log('First tactic techniques:', response.data.matrices[0].tactics[0]?.techniques)
-      }
       setAtlasData(response.data)
       
       // Build tactic mapping
@@ -144,9 +138,6 @@ const MitreAtlas: React.FC = () => {
   const loadAtlasTaxonomies = async () => {
     try {
       const response = await axios.get('/api/atlas/taxonomies')
-      console.log('ATLAS Taxonomies received:', response.data)
-      console.log('Taxonomies techniques:', response.data.techniques)
-      console.log('Is techniques an array?', Array.isArray(response.data.techniques))
       setTaxonomies(response.data)
     } catch (error) {
       console.error('Failed to load ATLAS taxonomies:', error)

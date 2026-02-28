@@ -129,15 +129,12 @@ const Dashboard: React.FC = () => {
     if (socket) {
       // Listen for session updates to refresh metrics
       socket.on('session_created', () => {
-        console.log('Session created, refreshing dashboard metrics')
         loadMetrics()
       })
       socket.on('session_updated', () => {
-        console.log('Session updated, refreshing dashboard metrics')
         loadMetrics()
       })
       socket.on('session_deleted', () => {
-        console.log('Session deleted, refreshing dashboard metrics')
         loadMetrics()
       })
       

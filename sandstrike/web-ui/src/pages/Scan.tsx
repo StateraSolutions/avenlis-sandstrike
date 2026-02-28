@@ -232,10 +232,6 @@ const Scan: React.FC = () => {
       const combinedPrompts = [...filteredPrompts.map(p => p.id), ...currentIndividualPrompts]
       setSelectedPrompts(combinedPrompts)
       
-      console.log('Selected collections:', selectedCollections)
-      console.log('All prompt IDs:', allPromptIds)
-      console.log('Filtered prompts:', filteredPrompts)
-      console.log('Current individual prompts:', currentIndividualPrompts)
     } else {
       // When no collections are selected, keep only individual prompts
       const individualPrompts = selectedPrompts.filter(promptId => {
@@ -256,8 +252,6 @@ const Scan: React.FC = () => {
         axios.get('/api/grading-intents'),
         axios.get('/api/targets')
       ])
-      console.log('Collections API response:', collectionsRes.data)
-      console.log('Collections data:', collectionsRes.data.collections)
       setCollections(collectionsRes.data.collections || [])
       setPrompts(promptsRes.data.prompts || [])
       setGradingIntents(intentsRes.data.grading_intents || {})
@@ -531,8 +525,6 @@ const Scan: React.FC = () => {
       
       // Load all selected datasets
       for (const datasetName of datasetsToLoad) {
-        console.log('Loading dataset:', datasetName)
-        
         const response = await axios.post('/api/datasets/huggingface/load', {
           dataset_name: datasetName
         })
@@ -649,7 +641,6 @@ const Scan: React.FC = () => {
         })
       } catch (err) {
         // Prompt might already exist, which is fine
-        console.log(`Prompt ${prompt.id} may already exist`)
       }
     })
     
