@@ -37,9 +37,7 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
       // Add refresh query parameter if forceRefresh is true to bypass cache
       const url = forceRefresh ? '/api/auth/status?refresh=true' : '/api/auth/status'
       const response = await axios.get(url)
-      console.log('Auth status response:', response.data)
       const subscriptionPlan = response.data.user?.subscriptionPlan || 'free'
-      console.log('Extracted subscription plan:', subscriptionPlan)
       
       setSubscription({
         subscriptionPlan,
@@ -69,8 +67,6 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
   const isProUser = subscription.subscriptionPlan === 'pro'
   const isPlusUser = subscription.subscriptionPlan === 'plus'
   const isFreeUser = subscription.subscriptionPlan === 'free'
-
-  console.log('Subscription context - isProUser:', isProUser, 'subscriptionPlan:', subscription.subscriptionPlan)
 
   const value: SubscriptionContextType = {
     subscription,
