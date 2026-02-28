@@ -225,6 +225,8 @@ const Dashboard: React.FC = () => {
     return techniques
   }
 
+  const hasNoData = metrics.total_tests === 0 && metrics.total_sessions === 0
+
   const getTopVulnerabilityCategories = () => {
     // Count vulnerability categories from vulnerabilities
     const categoryCounts: { [key: string]: number } = {}
@@ -288,6 +290,45 @@ const Dashboard: React.FC = () => {
         </Box>
       </Box>
 
+      {/* Empty State: Welcome and Get Started */}
+      {hasNoData && (
+        <Card
+          sx={{
+            mb: 4,
+            p: 4,
+            textAlign: 'center',
+            borderRadius: '12px',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+            background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+            border: '1px dashed #cbd5e1',
+          }}
+        >
+          <CardContent sx={{ py: 6, px: 4 }}>
+            <Typography variant="h5" fontWeight="bold" color="text.primary" gutterBottom sx={{ mb: 2 }}>
+              Welcome to SandStrike
+            </Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 480, mx: 'auto' }}>
+              You haven&apos;t run any security scans yet. Start by running your first scan against an LLM target to discover vulnerabilities and assess your security posture.
+            </Typography>
+            <Button
+              variant="contained"
+              size="large"
+              onClick={() => navigate('/scan')}
+              startIcon={<TestIcon />}
+              sx={{
+                px: 4,
+                py: 1.5,
+                fontSize: '1rem',
+                textTransform: 'none',
+                fontWeight: 600,
+              }}
+            >
+              Get Started — Run Your First Scan
+            </Button>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Key Metrics Cards - Reorganized */}
       <Grid container spacing={3} mb={4}>
         {/* Column 1: Security Score + Vulnerabilities */}
@@ -321,17 +362,23 @@ const Dashboard: React.FC = () => {
               <Typography variant="h6" gutterBottom>
                 Top Attack Techniques
               </Typography>
-              <Box sx={{ flex: 1, maxHeight: 500, overflowY: 'auto' }}>
-                {getTopAttackTechniques().map((item, index) => (
-                  <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 1 }}>
-                    <Typography variant="body2" sx={{ flex: 1, mr: 2 }}>
-                      {item.technique}
-                    </Typography>
-                    <Typography variant="body2" fontWeight="bold" color="primary">
-                      {item.count}
-                    </Typography>
-                  </Box>
-                ))}
+              <Box sx={{ flex: 1, maxHeight: 500, overflowY: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 120 }}>
+                {getTopAttackTechniques().length > 0 ? (
+                  getTopAttackTechniques().map((item, index) => (
+                    <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 1, width: '100%' }}>
+                      <Typography variant="body2" sx={{ flex: 1, mr: 2 }}>
+                        {item.technique}
+                      </Typography>
+                      <Typography variant="body2" fontWeight="bold" color="primary">
+                        {item.count}
+                      </Typography>
+                    </Box>
+                  ))
+                ) : (
+                  <Typography variant="body2" color="text.secondary">
+                    No data yet
+                  </Typography>
+                )}
               </Box>
             </CardContent>
           </Card>
@@ -344,17 +391,23 @@ const Dashboard: React.FC = () => {
               <Typography variant="h6" gutterBottom>
                 Top Vulnerability Categories
               </Typography>
-              <Box sx={{ flex: 1, maxHeight: 500, overflowY: 'auto' }}>
-                {getTopVulnerabilityCategories().map((item, index) => (
-                  <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 1 }}>
-                    <Typography variant="body2" sx={{ flex: 1, mr: 2 }}>
-                      {item.category}
-                    </Typography>
-                    <Typography variant="body2" fontWeight="bold" color="primary">
-                      {item.count}
-                    </Typography>
-                  </Box>
-                ))}
+              <Box sx={{ flex: 1, maxHeight: 500, overflowY: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 120 }}>
+                {getTopVulnerabilityCategories().length > 0 ? (
+                  getTopVulnerabilityCategories().map((item, index) => (
+                    <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 1, width: '100%' }}>
+                      <Typography variant="body2" sx={{ flex: 1, mr: 2 }}>
+                        {item.category}
+                      </Typography>
+                      <Typography variant="body2" fontWeight="bold" color="primary">
+                        {item.count}
+                      </Typography>
+                    </Box>
+                  ))
+                ) : (
+                  <Typography variant="body2" color="text.secondary">
+                    No data yet
+                  </Typography>
+                )}
               </Box>
             </CardContent>
           </Card>

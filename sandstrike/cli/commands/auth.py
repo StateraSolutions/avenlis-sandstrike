@@ -36,8 +36,19 @@ def verify_api_key() -> None:
         api_key = os.getenv('AVENLIS_API_KEY')
         if not api_key:
             console.print("[red]No API key found[/red]")
-            console.print("[yellow]Please set AVENLIS_API_KEY environment variable[/yellow]")
-            console.print("[blue]Example:[/blue] export AVENLIS_API_KEY='your_api_key_here'")
+            console.print("")
+            console.print("[yellow]To use SandStrike premium features (reports, platform prompts, etc.), you need a Pro subscription and an API key.[/yellow]")
+            console.print("")
+            console.print("[blue]1. Ensure you have a Pro subscription[/blue]")
+            console.print("   If not, upgrade at: [link]https://avenlis.staterasolv.com[/link]")
+            console.print("")
+            console.print("[blue]2. If you are Pro, generate an API key on the Avenlis platform:[/blue]")
+            console.print("   • Go to [link]https://avenlis.staterasolv.com[/link]")
+            console.print("   • Log in and open Settings → API Keys")
+            console.print("   • Create a new API key for SandStrike integration")
+            console.print("")
+            console.print("[blue]3. Set the API key in your environment:[/blue]")
+            console.print("   export AVENLIS_API_KEY='your_api_key_here'")
             return
         
         api_key = api_key.strip()
