@@ -225,7 +225,11 @@ const Dashboard: React.FC = () => {
     return techniques
   }
 
-  const hasNoData = metrics.total_tests === 0 && metrics.total_sessions === 0
+  const hasNoData =
+    Number(metrics.total_tests || 0) === 0 &&
+    Number(metrics.total_sessions || 0) === 0 &&
+    Number(metrics.total_vulnerabilities || 0) === 0 &&
+    (metrics.vulnerabilities?.length || 0) === 0
 
   const getTopVulnerabilityCategories = () => {
     // Count vulnerability categories from vulnerabilities
