@@ -155,7 +155,7 @@ prompts = storage.get_combined_prompts()
 
 ## Configuration
 
-**Targets and Ollama** are configured in `avenlis_config.yaml` (in the project root). Define your red team targets and Ollama endpoint/model there; no need to set Ollama-related env vars.
+**Targets (including Ollama endpoints/models)** are defined in [`sandstrike/data/targets.yaml`](sandstrike/data/targets.yaml) and can be managed via the CLI/UI, so you don’t need to configure Ollama-related env vars.
 
 For API keys and optional overrides, set environment variables (e.g. in a `.env` file):
 
@@ -168,7 +168,7 @@ OPENAI_API_KEY=your_openai_key_here
 GEMINI_API_KEY=your_gemini_key_here
 ```
 
-Configuration is loaded from `avenlis_config.yaml` first; environment variables are used for API keys and as fallbacks when the config file is missing.
+Environment variables are used for API keys; other settings use defaults or `sandstrike/data/targets.yaml`.
 
 ## Troubleshooting
 
