@@ -34,12 +34,6 @@
 
 ## Installation
 
-### From PyPI
-
-```bash
-pip install sandstrike
-```
-
 ### From Source
 
 ```bash
@@ -131,9 +125,9 @@ sandstrike [command] --help
 ### Python API
 
 ```python
-from avenlis.redteam import AvenlisRedteam, RedteamSession
-from avenlis.config import AvenlisConfig
-from avenlis.main_storage import AvenlisStorage
+from sandstrike.redteam import AvenlisRedteam, RedteamSession
+from sandstrike.config import AvenlisConfig
+from sandstrike.main_storage import AvenlisStorage
 
 # Configuration
 config = AvenlisConfig()
@@ -161,23 +155,20 @@ prompts = storage.get_combined_prompts()
 
 ## Configuration
 
-Create a `.env` file in the project root directory:
+**Targets and Ollama** are configured in `avenlis_config.yaml` (in the project root). Define your red team targets and Ollama endpoint/model there; no need to set Ollama-related env vars.
+
+For API keys and optional overrides, set environment variables (e.g. in a `.env` file):
 
 ```bash
-# Avenlis Platform Configuration
-AVENLIS_API_URL=https://api.avenlis.com
+# Avenlis Platform / Pro features
 AVENLIS_API_KEY=your_api_key_here
 
-# Local Testing Configuration
-OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=llama2
-
-# Web Interface Configuration
-WEB_PORT=8080
-WEB_HOST=0.0.0.0
+# Custom graders (optional)
+OPENAI_API_KEY=your_openai_key_here
+GEMINI_API_KEY=your_gemini_key_here
 ```
 
-Configuration is automatically loaded from environment variables, `.env` file, or default values.
+Configuration is loaded from `avenlis_config.yaml` first; environment variables are used for API keys and as fallbacks when the config file is missing.
 
 ## Troubleshooting
 

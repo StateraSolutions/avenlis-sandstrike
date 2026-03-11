@@ -2831,8 +2831,8 @@ class AvenlisServer:
                 if not api_key:
                     raise AvenlisError("API key required for report generation")
                 
-                # Get Otterback base URL
-                platform_base_url = os.getenv('AVENLIS_PLATFORM_BASE_URL', 'https://avenlis.staterasolv.com/api')
+                # Avenlis platform base URL
+                platform_base_url = 'https://avenlis.staterasolv.com/api'
                 
                 # Fetch code from server
                 code_package = _fetch_report_code(api_key, platform_base_url, report_type)
