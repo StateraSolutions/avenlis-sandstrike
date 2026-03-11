@@ -172,8 +172,17 @@ Desktop.ini
 # Avenlis specific
 *.log
 
-# SandStrke Database (UNCOMMENT THIS LINE TO EXCLUDE SUBSEQUENT DATABASE CHANGES)
+# SandStrike database (uncomment to exclude local .avenlis/ if used in-repo)
 # .avenlis/
+
+# Optional: local config overrides (if you use avenlis_config.local.yaml with secrets)
+# avenlis_config.local.yaml
+
+# Ruff
+.ruff_cache/
+
+# uv (Python package installer)
+.uv/
 
 # Node.js / npm
 node_modules/

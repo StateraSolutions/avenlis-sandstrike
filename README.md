@@ -190,9 +190,9 @@ sandstrike database local-wipe
 
 ## Getting Help
 
-- **User Guide**: See [USER_GUIDE.md](USER_GUIDE.md) for detailed usage instructions
+- **User Guide**: See [`documentation/USER_GUIDE.md`](documentation/USER_GUIDE.md) for detailed usage instructions
 - **CLI Reference**: Use `sandstrike --help` for command information
-- **CLI Cheat Sheet**: See [CLI_CHEATSHEET.md](CLI_CHEATSHEET.md) for quick command reference
+- **CLI Cheat Sheet**: See [`documentation/CLI_CHEATSHEET.md`](documentation/CLI_CHEATSHEET.md) for quick command reference
 - **Issues**: Report bugs and feature requests on GitHub
 - **Discord**: Join our community for support and discussions
 
@@ -206,6 +206,6 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 **Avenlis SandStrike** - Empowering AI Security Testing
 
-[Website](https://avenlis.staterasolv.com) • [User Guide](USER_GUIDE.md) • [CLI Reference](CLI_CHEATSHEET.md) • [Install Guide](INSTALL_INSTRUCTIONS.md)
+[Website](https://avenlis.staterasolv.com) • [User Guide](documentation/USER_GUIDE.md) • [CLI Reference](documentation/CLI_CHEATSHEET.md) • [Install Guide](documentation/INSTALL_INSTRUCTIONS.md)
 
 </div>

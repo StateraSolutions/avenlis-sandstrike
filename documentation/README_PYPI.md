@@ -193,9 +193,9 @@ sandstrike database local-wipe
 
 ## Getting Help
 
-- **User Guide**: See [USER_GUIDE.md](USER_GUIDE.md) for detailed usage instructions
+- **User Guide**: See [`USER_GUIDE.md`](USER_GUIDE.md) for detailed usage instructions
 - **CLI Reference**: Use `sandstrike --help` for command information
-- **CLI Cheat Sheet**: See [CLI_CHEATSHEET.md](CLI_CHEATSHEET.md) for quick command reference
+- **CLI Cheat Sheet**: See [`CLI_CHEATSHEET.md`](CLI_CHEATSHEET.md) for quick command reference
 - **Issues**: Report bugs and feature requests on GitHub
 - **Discord**: Join our community for support and discussions
 
