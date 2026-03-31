@@ -1,0 +1,8 @@
+targets:
+- id: local_ollama_server
+  name: Local Ollama Server (Sample)
+  ip_address: http://localhost:11434
+  description: Local Ollama instance running on default port
+  date_updated: '2026-03-30T21:24:32.542467Z'
+  target_type: Ollama
+  model: llama2:latest

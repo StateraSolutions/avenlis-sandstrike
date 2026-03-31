@@ -1,0 +1,57 @@
+# Session Configuration Template
+# Copy this template to create your own testing session configurations
+# Sessions define how security tests are executed and managed
+
+# Session identification
+session:
+  name: "My Security Testing Session"
+  description: "Description of what this session will test"
+  
+# Target configuration - the system being tested
+target:
+  name: "My Target System"
+  url: "https://api.example.com"  # API endpoint or system URL
+  model_name: "gpt-4"  # LLM model being tested
+  
+# Authentication settings (if required)
+authentication:
+  type: "bearer_token"  # Choose from: bearer_token, api_key, basic, none
+  # token: "your-auth-token-here"  # Uncomment and add your token
+  # api_key: "your-api-key-here"   # Or API key
+  
+# Test execution settings
+execution:
+  retry_count: 3  # Number of retries for failed requests
+  max_concurrent: 5  # Maximum concurrent requests
+  delay_between_requests: 1  # Seconds to wait between requests
+
+# Collections to run in this session
+collections:
+  - "my-custom-collection"  # Reference your collection IDs here
+  # - "owasp-llm-top10-2025"  # Add more collections as needed
+
+# Output and reporting
+reporting:
+  output_format: "json"  # Choose from: json, yaml, csv
+  save_responses: true  # Whether to save LLM responses
+  output_directory: "./results"  # Where to save test results
+
+# Optional: Advanced settings
+# advanced:
+#   rate_limiting:
+#     requests_per_minute: 60
+#   filtering:
+#     severity_threshold: "medium"  # Only run medium+ severity prompts
+#     categories_to_test:
+#       - "system_prompt_leakage"
+#       - "sensitive_information_disclosure"
+
+# Usage Instructions:
+# 1. Copy this template
+# 2. Update session name and description
+# 3. Configure your target system details
+# 4. Set authentication if required
+# 5. Adjust execution parameters for your needs
+# 6. Reference your collections to test
+# 7. Configure reporting preferences
+# 8. Save and use to run security testing sessions

@@ -1,0 +1,36 @@
+{
+  "scan_results": [
+    {
+      "id": "my_scan_001",
+      "session_name": "My Custom Security Scan",
+      "target": "ollama://model_name",
+      "collection_id": "my_collection_id",
+      "status": "completed",
+      "started_at": "2025-01-01T00:00:00Z",
+      "metadata": {
+        "scan_type": "full",
+        "model_name": "model_name",
+        "temperature": 0.7,
+        "max_tokens": 150
+      },
+      "results": [
+        {
+          "prompt_id": "example_prompt_id",
+          "status": "passed",
+          "response": "Model response text here",
+          "timestamp": "2025-01-01T00:00:00Z",
+          "response_time_ms": 1000,
+          "metadata": {
+            "attack_technique": "prompt_injection",
+            "vuln_category": "system_prompt_leakage",
+            "severity": "medium"
+          }
+        }
+      ],
+      "source": "file",
+      "source_file": "my_scan_results.json",
+      "vulnerabilities_found": 0,
+      "tags": ["custom", "security", "test"]
+    }
+  ]
+}
